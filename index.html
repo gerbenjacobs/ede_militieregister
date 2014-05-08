@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <title>Militieregister Gemeente Ede van 1812-1919</title>
+    <style type="text/css">
+        html, body 
+        {
+            font-family: Verdana;
+            font-size: 1em;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+</head>
+<body>
+
+    <h1>Militieregister Gemeente Ede van 1812-1919</h1>
+    <p>Op deze pagina vind je het <a href="https://www.ede.nl/gemeente/gemeentearchief/open-cultuur-data/open-data-gemeentearchief-ede/militieregisters-gemeente-ede-1812-1919/">militieregister voor 1812-1919 van de gemeente Ede</a> dit is een <a href="https://www.ede.nl/gemeente/gemeentearchief/open-cultuur-data/open-data-gemeentearchief-ede/">open data document van de Gemeente Ede</a>.</p>
+    <p>Je kunt de kolommen sorteren, maar het makkelijkst is om gewoon het <strong>Zoek</strong> veld te gebruiken. Je kunt hier gewoon de volledige naam (voor- en achternaam) zoeken en de pagina zal dat begrijpen.</p>
+    
+    <hr>
+    
+    <table id="table">
+        <thead>
+            <tr>
+                <th>Voornaam</th>
+                <th>Tussenvoegsel</th>
+                <th>Achternaam</th>
+                <th>Geboorteplaats</th>
+                <th>Geboortedatum</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+
+    <p id="footer">De code voor dit project is te vinden op <a href="https://github.com/gerbenjacobs/ede_militieregister">Github</a> onder een MIT licentie.</p>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    <script>
+    $(document).ready(function(){
+        loadData();
+    });
+    
+    function loadData() {
+        var url, table;
+        url = 'OpenData_Miltieregisters_Gemeente_Ede_1812_1919_CSV_25022014_01.csv.json';
+        table = $("#table");
+
+        $.getJSON(url, function(data) {
+            table.DataTable({
+                data: data,
+                columns: [
+                    { data: 'voornaam' },
+                    { data: 'tussenvoegsel' },
+                    { data: 'achternaam' },
+                    { data: 'geboorteplaats' },
+                    { data: 'geboortedatum' }
+                ],
+                language: {
+                    "sProcessing": "Bezig...",
+                    "sLengthMenu": "_MENU_ resultaten weergeven",
+                    "sZeroRecords": "Geen data om weer te geven",
+                    "sInfo": "Resulaten _START_ tot _END_ van _TOTAL_ weergegeven",
+                    "sInfoEmpty": "Geen data om weer te geven",
+                    "sInfoFiltered": " (gefilterd uit _MAX_ regels)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Zoeken:",
+                    "sEmptyTable": "Geen gegevens aanwezig in de tabel",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Een moment geduld aub - bezig met laden...",
+                    "oPaginate": {
+                        "sFirst": "Eerste pagina",
+                        "sLast": "Laatste pagina",
+                        "sNext": "Volgende pagina",
+                        "sPrevious": "Vorige pagina"
+                    }
+                }
+            });
+        });
+    }
+    </script>
+</body>
+</html>
