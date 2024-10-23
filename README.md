@@ -1,5 +1,7 @@
 # Militieregister Gemeente Ede van 1812-1919
 
+__Notitie, Okt. 2024__: Meeste van deze links werken niet meer. Het open data 'portal' is nu te vinden op: https://gemeentearchief.ede.nl/open-cultuur-data
+
 Deze repository bevat de gegevens uit het data bestand "[Militieregister Gemeente Ede van 1812-1919](https://www.ede.nl/gemeente/gemeentearchief/collecties/opendata/datasets-gemeentearchief-ede/militieregisters-gemeente-ede-1812-1919/)", één van de [open data documenten van de Gemeente Ede](https://www.ede.nl/gemeente/gemeentearchief/collecties/opendata/datasets-gemeentearchief-ede/).
 
 Deze code is gemaakt om snel te zoeken en maakt gebruik van [DataTables](https://datatables.net/). Deze repo bevat ook `json_converter.php` een PHP script dat het CSV bestand (wat eigenlijk een TSV is) omzet naar JSON en een aantal meta-data velden weghaald.
